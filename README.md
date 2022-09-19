@@ -47,10 +47,9 @@ Example commands:
  ``` 
 > Note: `Required argument` 
 
-
+---
 **Optional arguments:**
 
----
 
 **Filter by IP-Address**
  ```sh
