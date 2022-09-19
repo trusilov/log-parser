@@ -3,13 +3,14 @@
 Shell script to convert log files to CSV format
 
 ##  Cheatsheet
-| Argument        | Description             | Example                   		                | Status             |
-|-----------------|-------------------------|---------------------------------------------|--------------------|
-| `-a`			         | *Path to log file.*     | `./convert.sh -a nginx.log`    			          | Default convert.	  |
-| `-p`         	  | *Path to log file.*     | `./convert.sh -p nginx.log`    			          | Only with filter.	 |
-| `-i`          	 | *Filter by IP-Address*  | `./convert.sh -p nginx.log -i 162.55.33.98` | Only with filter.	 |
-| `-d`			         | *Filter by Date*		      | `./convert.sh -p nginx.log -d 26/Apr/2021`  | Only with filter.	 |
-| `-c`			         | *Filter by Status Code* | `./convert.sh -p nginx.log -c 200` 		       | Only with filter.	 |
+| Argument        | Description            | Example                   		          | Status             |
+|-----------------|------------------------|---------------------------------------|--------------------|
+| `-a`			         | *Path to log file.*    | `./convert.sh -a nginx.log`    			    | Default convert.	  |
+| `-p`         	  | *Path to log file.*    | `./convert.sh -p nginx.log`    			    | Only with filter.	 |
+| `-i`          	 | *Filter by IP-Address* | `./convert.sh -p nginx.log -i 162.55.33.98` | Only with filter.	 |
+| `-d`			         | *Filter by Date*		     | `./convert.sh -p nginx.log -d 26/Apr/2021` | Only with filter.	 |
+| `-c`			         | *Filter by Status Code* | `./convert.sh -p nginx.log -c 200` 		 | Only with filter.	 |
+| `-h`            | *Show Help information*  | `./convert.sh -h`                     |                    |
 
 
 

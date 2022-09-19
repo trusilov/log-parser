@@ -17,6 +17,7 @@ function Help () {
                     or
         ./convert.sh -p /SomeFolder/MyLogs.log
 
+
     Filters:
       Required arguments for filers:
         -p [path to log file] - Path to your log file
@@ -37,6 +38,12 @@ function Help () {
         -c [STATUS CODE] - Filter by HTTP status code
           Example command:
           ./convert.sh -p nginx.log -c 200
+
+
+    Other arguments:
+      -h  - Show Help Information
+        Example command:
+        ./convert.sh -h
 
 *********************************************************
 EOF
