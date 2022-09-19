@@ -38,7 +38,6 @@ function Help () {
           Example command:
           ./convert.sh -p nginx.log -c 200
 
-
 *********************************************************
 EOF
 
