@@ -49,30 +49,35 @@ Example commands:
 
 
 **Optional arguments:**
+
+---
+
+**Filter by IP-Address**
  ```sh
 -i [IP-ADDRESS] 
  ```
-**Filter by IP-Address**
 
 Example command:
  ```sh
 ./convert.sh -p nginx.log -i 162.55.33.98
  ```
+---
 
+**Filter by Date**
  ```sh
 -d [DATE] 
  ```
-**Filter by date**
 
 Example command:
  ```sh
 ./convert.sh -p nginx.log -d 26/Apr/2021
  ```
 
+---
+**Filter by HTTP status code**
  ```sh
 -c [STATUS CODE] 
  ```
-**Filter by HTTP status code**
 
 Example command:
  ```sh
