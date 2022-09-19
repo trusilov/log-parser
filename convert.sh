@@ -63,6 +63,12 @@ HEADER="IP-Arddress, Date/Time, REQUEST, STATUS CODE, \
         - , - , BROWSER INFO, - , REQUEST TIME, NAME, \
         IP:PORT, - , REQUEST TIME, STATUS CODE, HASH"
 
+# COLORS :)
+LGREEN='\033[1;32m'
+LRED='\033[1;31m'
+NC='\033[0m' # No Color
+
+
 function Header() {
     echo $HEADER >> output.csv
 }
@@ -77,18 +83,20 @@ function ClearString() {
 
 # CONVERT ALL LOG to csv
 function AllLogs() {
+  Header
   fileLenth=${#linesArray[@]}
   for (( i=0;i<$fileLenth;i++ ));
   do
     ClearString
     echo $clearLine >> output.csv
   done
-  echo "TOTAL LINES: $i"
+  printf "${LGREEN}TOTAL LINES: $i${NC} \n"
 
 }
 
 # FILTER BY IP ADDRESS
 function IPFilter () {
+  Header
   fileLenth=${#linesArray[@]}
   for (( i=0;i<$fileLenth;i++ ));
   do
@@ -97,11 +105,12 @@ function IPFilter () {
       echo $clearLine >> output.csv
     fi
   done
-  echo "TOTAL LINES: $i"
+  printf "${LGREEN}TOTAL LINES: $i${NC} \n"
 }
 
 # FILTER BY IP DATE
 function DateFilter () {
+  Header
   fileLenth=${#linesArray[@]}
   for (( i=0;i<$fileLenth;i++ ));
   do
@@ -110,11 +119,12 @@ function DateFilter () {
       echo $clearLine >> output.csv
     fi
   done
-  echo "TOTAL LINES: $i"
+  printf "${LGREEN}TOTAL LINES: $i${NC} \n"
 }
 
 # FILTER BY HTTP STATUS CODE
 function StatusCodeFilter () {
+  Header
   fileLenth=${#linesArray[@]}
   for (( i=0;i<$fileLenth;i++ ));
   do
@@ -123,7 +133,7 @@ function StatusCodeFilter () {
       echo $clearLine >> output.csv
     fi
   done
-  echo "TOTAL LINES: $i"
+  printf "${LGREEN}TOTAL LINES: $i${NC} \n"
 }
 
 
@@ -132,34 +142,30 @@ while getopts "p:a:i:d:c:h:" opt; do
   case $opt in
   p)
     FILE_PATH=${OPTARG}
-    echo "LOG FILE: $FILE_PATH"
+    printf "${LGREEN}LOG FILE: $FILE_PATH${NC} \n"
     readarray linesArray <  "${FILE_PATH}"
     ;;
   a)
     FILE_PATH=${OPTARG}
-    echo "LOG FILE: $FILE_PATH"
-    echo "CONVERT ALL LOG"
+    printf "${LGREEN}LOG FILE: $FILE_PATH${NC} \n"
+    printf "${LGREEN}CONVERT ALL LOG${NC} \n"
     readarray linesArray <  "${FILE_PATH}"
-    Header
     AllLogs
     ;;
   i)
     IP_ARG=${OPTARG}
-    Header
     IPFilter
-    echo "FILTER BY IP: $IP_ARG"
+    printf "${LGREEN}FILTER BY IP: $IP_ARG${NC} \n"
     ;;
   d)
     DATE_ARG=${OPTARG}
-    Header
     DateFilter
-    echo "FILTER BY DATE: $DATE_ARG"
+    printf "${LGREEN}FILTER BY DATE: $DATE_ARG${NC} \n"
     ;;
   c)
     SCODE_ARG=${OPTARG}
-    Header
     StatusCodeFilter
-    echo "FILTER BY STATUS CODE: $SCODE_ARG"
+    printf "${LGREEN}FILTER BY STATUS CODE: $SCODE_ARG${NC} \n"
     ;;
   h)
     Help
